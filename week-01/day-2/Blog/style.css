@@ -1,0 +1,55 @@
+
+body {
+    margin: 0px;
+
+}
+header {
+    background-color: gray;
+    border: 2px solid black;
+    padding-left: 10%;
+    padding-right: 10%;
+
+
+}
+main {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.title > p {
+   margin-bottom: 0px;
+   font-weight: bold;
+
+}
+.content > p {
+    margin-bottom: 0px;
+    font-weight: bold;
+ }
+
+ .content > textarea {
+width: 100%;
+
+ }
+ 
+
+ .bottom {
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 5px;
+    width: 100px;
+    
+ }
+
+ .post {
+    border: 1px solid black;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding: 0px 10px;
+}
+
+.post > h4 {
+    margin: 10px 0px;
+}
+.post > p {
+    margin: 5px;
+}
