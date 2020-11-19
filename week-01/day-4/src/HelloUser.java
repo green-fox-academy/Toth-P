@@ -9,6 +9,6 @@ public class HelloUser {
         String userInput1 = scanner.nextLine();
 
 
-        System.out.println("Hello, " +userInput1 + "!");
+        System.out.println("Hello, " + userInput1 + "!");
     }
 }

@@ -10,8 +10,7 @@ public class OddEven {
 
         if ((userInput1 % 2) != 0) {
             System.out.println("Odd");
-        }
-        else{
+        } else {
             System.out.println("Even");
         }
 

@@ -8,7 +8,7 @@ public class MileToKmConverter {
         Scanner scanner = new Scanner(System.in);
         double userInputMiles = scanner.nextDouble();
 
-        double uIKilometer = userInputMiles *1.6;
+        double uIKilometer = userInputMiles * 1.6;
         System.out.println(uIKilometer + "kilometers");
 
     }

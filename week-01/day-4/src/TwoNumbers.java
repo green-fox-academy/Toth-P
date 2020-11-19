@@ -25,7 +25,6 @@ public class TwoNumbers {
         long rem = num1 % num2;
 
 
-
         System.out.println(add);
         System.out.println(sub);
         System.out.println(mult);
