@@ -14,11 +14,11 @@ public class IntroduceYourself {
         int age = 29;
 
         double height = 1.73;
+        String name ="Peter Toth";
 
-        System.out.println("Peter Toth");
+        System.out.println(name);
         System.out.println(age);
-        System.out.println(height
-        );
+        System.out.println(height);
 
 
     }
