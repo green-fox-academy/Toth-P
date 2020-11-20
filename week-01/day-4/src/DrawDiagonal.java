@@ -13,7 +13,7 @@ public class DrawDiagonal {
         // The square should have as many lines as the number was
 
 
-        int a = 4;
+        int a = 10;
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < a; j++) {
                 if (i == j) {
