@@ -4,15 +4,13 @@ public class ReverseDrawDiagonal {
         a++;
         for (int i = 1; i < a; i++) {
             for (int j = 1; j < a; j++) {
-                if (j == a-i) {
+                if (j == a - i) {
                     System.out.print("X");
-                }
-                else if (i == 1 || i == a - 1)
+                } else if (i == 1 || i == a - 1)
                     System.out.print("X");
                 else if (j == 1 || j == a - 1) {
                     System.out.print("X");
-                }
-                else {
+                } else {
                     System.out.print(" ");
                 }
 
