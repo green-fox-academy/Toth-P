@@ -1,5 +1,4 @@
 import javax.swing.*;
-
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
@@ -18,20 +17,42 @@ public class RainbowBoxFunction {
     }
 
     public static void RainbowSquare(int boxSize, Color starterColor, Graphics graphics) {
-
-
-
-
         graphics.setColor(starterColor);
-        for (int i = boxSize; i >= 0; i--) {
+        int cordX = (WIDTH - boxSize) / 2;
+        int cordY = (HEIGHT - boxSize) / 2;
+        graphics.fillRect(cordX, cordY, boxSize, boxSize);
+
+        Color INDIGO = new Color(75, 0, 130);
+        Color VIOLET = new Color(238, 130, 238);
+
+        Color[] thecolors = new Color[7];
 
 
-            int cordX = (WIDTH - i) / 2;
-            int cordY = (HEIGHT - i) / 2;
+        thecolors[0] = Color.RED;
+        graphics.setColor(starterColor);
+        thecolors[1] = Color.ORANGE;
+        thecolors[2] = Color.YELLOW;
+        thecolors[3] = Color.GREEN;
+        thecolors[4] = Color.BLUE;
+        thecolors[5] = INDIGO;
+        thecolors[6] = VIOLET;
+
+
+        int x = 6;
+        for (int i = boxSize + 1; i < WIDTH; i++) {
+            x++;
+            boolean overFlow = x == 7;
+            if (overFlow) {
+                x = 0;
+            }
+            graphics.setColor(thecolors[x]);
+
+            cordX = (WIDTH - i) / 2;
+            cordY = (HEIGHT - i) / 2;
             graphics.drawRect(cordX, cordY, i, i);
 
         }
-       // graphics.setColor(thecolors[3]);
+
 
     }
 
