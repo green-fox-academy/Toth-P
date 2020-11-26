@@ -17,30 +17,29 @@ public class ConnectTheDots {
         int[][] box = {{10, 10}, {290, 10}, {290, 290}, {10, 290}};
         int[][] connect = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
                 {120, 100}, {85, 130}, {50, 100}};
-        Connect(connect,graphics);
-        Connect(box,graphics);
+        Connect(connect, graphics);
+        Connect(box, graphics);
 
     }
 
-    private static void Connect(int[][] theArray , Graphics graphics) {
+    private static void Connect(int[][] theArray, Graphics graphics) {
 
-        int B = 0;
-        int D = 1;
-        int E = 0;
+        int parameterA = 0;
+        int parameterB = 1;
+        int parameterC = 0;
         graphics.setColor(Color.GREEN);
-        for (int i = 0; i < theArray.length ; i++) {
-            E++;
-            boolean overFlow = E == theArray.length;
+        for (int i = 0; i < theArray.length; i++) {
+            parameterC++;
+            boolean overFlow = parameterC == theArray.length;
             if (overFlow) {
-                E = 0;
+                parameterC = 0;
             }
 
-            graphics.drawLine(theArray[i][B],theArray[i][D],theArray[E][B],theArray[E][D]);
+            graphics.drawLine(theArray[i][parameterA], theArray[i][parameterB], theArray[parameterC][parameterA], theArray[parameterC][parameterB]);
 
         }
 
     }
-
 
 
     // Don't touch the code below

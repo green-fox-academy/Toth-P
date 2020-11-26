@@ -19,11 +19,13 @@ public class Checkerboard {
         int cordX2 = width;
         int cordY = -(height * 2);
         int cordY2 = -height;
-        graphics.setColor(Color.BLACK);
-        graphics.drawLine(0, 0, 320, 0);
-        graphics.drawLine(320, 0, 320, 320);
-        graphics.drawLine(320, 320, 0, 320);
-        graphics.drawLine(0, 320, 0, 0);
+
+
+//        graphics.setColor(Color.BLACK);
+//        graphics.drawLine(0, 0, 320, 0);
+//        graphics.drawLine(320, 0, 320, 320);
+//        graphics.drawLine(320, 320, 0, 320);
+//        graphics.drawLine(0, 320, 0, 0);
 
         for (int k = 0; k <= HEIGHT / (height * 2) - 1; k++) {
 
@@ -36,11 +38,9 @@ public class Checkerboard {
                 graphics.fillRect(cordX, cordY, width, height);
                 cordX = cordX + (width * 2);
 
-                for (int j = 0; j < 1; j++) {
-                    graphics.fillRect(cordX2, cordY2, width, height);
-                    cordX2 = cordX2 + (width * 2);
+                graphics.fillRect(cordX2, cordY2, width, height);
+                cordX2 = cordX2 + (width * 2);
 
-                }
             }
         }
     }
