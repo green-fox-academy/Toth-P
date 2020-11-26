@@ -13,39 +13,44 @@ public class FunctionToCenter {
         // Fill the canvas with lines from the edges, every 20 px, to the center.
 
 
-        FirstLine(0, 0, graphics);
+        FirstLine(60, 80, graphics);
 
     }
 
     public static void FirstLine(int cordX, int cordY, Graphics graphics) {
         int boxWidth = WIDTH;
         int boxHeight = HEIGHT;
-//        boolean box = cordX <= cordY;
-//        if (box) {
-//            boxWidth = boxWidth - cordX;
-//            boxHeight = boxHeight - cordX;
-//        } else {
-//            boxWidth = boxWidth - cordY;
-//            boxHeight = boxHeight - cordY;
-//        }
-        int centerX = boxWidth / 2;
-        int centerY = boxHeight / 2;
-
-        graphics.setColor(Color.GREEN);
-        graphics.drawLine(cordX, cordY, centerX, centerY);
+        boolean box = cordX <= cordY;
+        if (box) {
+            boxWidth = boxWidth - cordX;
+            boxHeight = boxHeight - cordX;
+        } else {
+            boxWidth = boxWidth - cordY;
+            boxHeight = boxHeight - cordY;
+        }
+        int centerX = WIDTH / 2;
+        int centerY = HEIGHT / 2;
 
 
-        graphics.setColor(Color.BLACK);
-        for (int i = 20; i <= boxWidth; i = i + 20) {
+        for (int i = 0; i <= boxHeight; i = i + 20) {
             int lineCordX = cordX + i;
             int lineCordY = cordY + i;
+            boolean overFlow = lineCordX > boxHeight;
+            boolean overFlow2 = lineCordY > boxWidth;
+            if (overFlow) {
+             lineCordX = boxHeight;
+            }
+            if (overFlow2) {
+             lineCordY = boxWidth;
+            }
             graphics.drawLine(WIDTH - boxWidth, lineCordY, centerX, centerY);
             graphics.drawLine(lineCordX, HEIGHT - boxHeight, centerX, centerY);
             graphics.drawLine(boxWidth, lineCordY, centerX, centerY);
             graphics.drawLine(lineCordX, boxHeight, centerX, centerY);
 
         }
-
+        graphics.setColor(Color.GREEN);
+        graphics.drawLine(cordX, cordY, centerX, centerY);
 
     }
 

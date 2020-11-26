@@ -35,7 +35,10 @@ public class ConnectTheDots {
                 parameterC = 0;
             }
 
-            graphics.drawLine(theArray[i][parameterA], theArray[i][parameterB], theArray[parameterC][parameterA], theArray[parameterC][parameterB]);
+            graphics.drawLine(  theArray[i][parameterA],
+                                theArray[i][parameterB],
+                                theArray[parameterC][parameterA],
+                                theArray[parameterC][parameterB]);
 
         }
 
