@@ -13,7 +13,7 @@ public class Main {
 
         Pokemon wildPokemon = new Pokemon("Oddish", "leaf", "water");
 
-        // Which pokemon should Ash use?
+                               // Which pokemon should Ash use?
 
         System.out.print("I choose you, " + chooseAgainst(wildPokemon));
 
