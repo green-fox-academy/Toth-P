@@ -30,22 +30,24 @@ public class Animal {
     public static void main(String[] args) {
 
         Animal animal1 = new Animal();
-        System.out.println(animal1.hunger);
-        System.out.println(animal1.thirst);
 
         animal1.play();
-        System.out.println(animal1.hunger);
-        System.out.println(animal1.thirst);
 
         animal1.eat();
-        System.out.println(animal1.hunger);
-        System.out.println(animal1.thirst);
-
 
         animal1.drink();
-        System.out.println(animal1.hunger);
-        System.out.println(animal1.thirst);
 
+        Farm animalList = new Farm();
+        animalList.addAnimal(animal1);
+
+        animalList.breed();
+
+        System.out.println(animalList.slots);
+        System.out.println(animalList.AnimalsList.size());
+
+        animalList.slaughter();
+        System.out.println(animalList.slots);
+        System.out.println(animalList.AnimalsList.size());
     }
 
 }

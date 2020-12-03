@@ -13,20 +13,39 @@ public class Sharpie {
     double inkAmount = 100.0;
 
     public Sharpie(String color, double width) {
-this.color=color;
-this.width = width;
+        this.color = color;
+        this.width = width;
     }
 
-public void use(){
+    public void use() {
         inkAmount--;
-}
+    }
 
     public static void main(String[] args) {
-        var pen1 = new Sharpie("orange",20.0);
-         pen1.use();
+        var pen1 = new Sharpie("orange", 20.0);
+        pen1.use();
+        Sharpie pen2 = new Sharpie("black", 20.0);
+        Sharpie pen3 = new Sharpie("black", 20.0);
+        Sharpie pen4 = new Sharpie("black", 20.0);
+        Sharpie pen5 = new Sharpie("black", 20.0);
+
+        pen5.inkAmount = 0;
+
         System.out.println(pen1.inkAmount);
         System.out.println(pen1.color);
         System.out.println(pen1.width);
+
+        SharpieSet sharpieSet = new SharpieSet();
+        sharpieSet.addSharpie(pen1);
+        sharpieSet.addSharpie(pen2);
+        sharpieSet.addSharpie(pen3);
+        sharpieSet.addSharpie(pen4);
+        sharpieSet.addSharpie(pen5);
+
+
+        System.out.println(sharpieSet.countUsuable());
+        sharpieSet.removeTrash();
+        System.out.println(sharpieSet.getSize());
 
     }
 }

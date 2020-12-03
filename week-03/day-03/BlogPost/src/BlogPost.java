@@ -48,7 +48,21 @@ public class BlogPost {
         blog3.text = "Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the" +
                 " center of attention. When I asked to take his picture outside one of IBM’s" +
                 " New York City offices, he told me that he wasn’t really into the whole" +
-                " organizer profile thing.")
+                " organizer profile thing.";
+
+        Blog webpage = new Blog();
+
+        webpage.addBlog(blog1);
+        webpage.addBlog(blog2);
+        webpage.addBlog(blog3);
+
+        webpage.update(3, blog2);
+        webpage.update(4, blog1);
+        webpage.update(5, blog3);
+
+        webpage.delete(1);
+
+
 
     }
 }
