@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Fibonacci {
     // The fibonacci sequence is a famous bit of mathematics,
     // and it happens to have a recursive definition.
@@ -7,21 +9,33 @@ public class Fibonacci {
     // Define a recursive fibonacci(n) method that
     // returns the nth fibonacci number,
     // with n=0 representing the start of the sequence.
+
+
     public static void main(String[] args) {
-        for (int i = 0; i <15 ; i++) {
-            System.out.println(nthNumber(i));
+
+
+        for (int i = 0; i < 15; i++) {
+            System.out.println(fibonacciNth(i));
         }
 
 
     }
-    public static int nthNumber (int nth ){
-        if (nth <= 1){
-            return nth;
+
+
+    public static int fibonacciNth(int nthNumber) {
+        if (nthNumber <= 0) {
+            return 0;
+        } else if (nthNumber == 1) {
+            return 1;
         }
 
-        return nthNumber(nth-2)+ nthNumber(nth-1);
-    }
+        return fibonacciNth(nthNumber - 2) + fibonacciNth(nthNumber - 1);
 
+    }
 
 
 }
+
+
+
+
