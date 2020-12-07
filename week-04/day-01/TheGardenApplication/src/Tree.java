@@ -17,7 +17,7 @@ public class Tree extends Plant {
 
     @Override
     public double GetNeedWater() {
-        return 10;
+        return 10.0;
     }
 
 

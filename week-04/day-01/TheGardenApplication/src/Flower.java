@@ -1,7 +1,7 @@
 public class Flower extends Plant {
 
-    public Flower( String color) {
-        super( color);
+    public Flower(String color) {
+        super(color);
 
     }
 
@@ -11,12 +11,13 @@ public class Flower extends Plant {
     }
 
     @Override
-    public double GetAbsorb(){
+    public double GetAbsorb() {
         return 0.75;
     }
+
     @Override
-    public double GetNeedWater(){
-        return 5;
+    public double GetNeedWater() {
+        return 5.0;
     }
 
 }

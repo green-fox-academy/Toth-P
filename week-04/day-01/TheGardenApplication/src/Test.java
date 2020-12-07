@@ -17,17 +17,12 @@ public class Test {
         garden.addPlant(tree2);
 
 
-        garden.gardenInfo();
-        System.out.println();
-
         garden.wateringWith(40);
         garden.gardenInfo();
         System.out.println();
 
         garden.wateringWith(70);
         garden.gardenInfo();
-
-
 
     }
 

@@ -23,21 +23,22 @@ public class Garden {
     }
 
     public void wateringWith(int liter) {
-        double literPerPlant = (double)liter / numberOfPlantsToWater();
+        double literPerPlant = (double) liter / numberOfPlantsToWater();
         for (int i = 0; i < garden.size(); i++) {
             if (garden.get(i).shouldBeWatered()) {
                 double literAbsorbed = literPerPlant * garden.get(i).GetAbsorb();
-                int waterAmount = garden.get(i).getCurrentWaterAmount() + (int)literAbsorbed;
-                garden.get(i).setCurrentWaterAmount(waterAmount);
+                //System.out.println(garden.get(i).currentWaterAmount());
+                garden.get(i).waterAmountAdder(literAbsorbed);
+                //System.out.println(garden.get(i).currentWaterAmount());
             }
         }
     }
 
-   public void gardenInfo(){
-       for (int i = 0; i < garden.size() ; i++) {
-           garden.get(i).info();
-       }
-   }
+    public void gardenInfo() {
+        for (int i = 0; i < garden.size(); i++) {
+            garden.get(i).info();
+        }
+    }
 
 
 }
