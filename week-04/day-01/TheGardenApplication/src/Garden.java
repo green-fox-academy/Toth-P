@@ -34,11 +34,18 @@ public class Garden {
         }
     }
 
-    public void gardenInfo() {
-        for (int i = 0; i < garden.size(); i++) {
-            garden.get(i).info();
+    public void gardenInfo(){
+        for (Plant plant : garden) {
+            plant.info();
         }
     }
+
+
+//    public void gardenInfo() {
+//        for (int i = 0; i < garden.size(); i++) {
+//            garden.get(i).info();
+//        }
+//    }
 
 
 }

@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+
 
 public class Dominoes {
     public static void main(String[] args) {
@@ -33,9 +35,10 @@ public class Dominoes {
 
         }
 
-
+        //Collections.sort(dominoes);
         System.out.println(dominoes);
         System.out.println(dominoesComplete);
+
     }
 
     static List<Domino> initializeDominoes() {
@@ -48,6 +51,8 @@ public class Dominoes {
         dominoes.add(new Domino(7, 1));
         return dominoes;
     }
+
+
 
 
 }

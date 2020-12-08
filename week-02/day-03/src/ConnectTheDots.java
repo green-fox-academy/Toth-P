@@ -19,7 +19,7 @@ public class ConnectTheDots {
                 {120, 100}, {85, 130}, {50, 100}};
 
 
-        Connect(connect, graphics);
+        //Connect(connect, graphics);
         Connect(box, graphics);
 
     }

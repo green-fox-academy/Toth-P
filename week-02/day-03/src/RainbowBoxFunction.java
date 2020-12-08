@@ -29,7 +29,6 @@ public class RainbowBoxFunction {
 
 
         thecolors[0] = Color.RED;
-        graphics.setColor(starterColor);
         thecolors[1] = Color.ORANGE;
         thecolors[2] = Color.YELLOW;
         thecolors[3] = Color.GREEN;
@@ -38,14 +37,14 @@ public class RainbowBoxFunction {
         thecolors[6] = VIOLET;
 
 
-        int x = 6;
+        int index = 6;
         for (int i = boxSize + 1; i < WIDTH; i++) {
-            x++;
-            boolean overFlow = x == 7;
-            if (overFlow) {
-                x = 0;
+            index++;
+            boolean outOfBounds = index == 7;
+            if (outOfBounds) {
+                index = 0;
             }
-            graphics.setColor(thecolors[x]);
+            graphics.setColor(thecolors[index]);
 
             cordX = (WIDTH - i) / 2;
             cordY = (HEIGHT - i) / 2;
