@@ -1,0 +1,45 @@
+body {
+
+    background-color: #00bfff;
+    margin: 20px;
+}
+
+
+
+
+table, th, td {
+    border:1px solid gray;
+    border-collapse: collapse;
+    padding: 10px 10px 10px 10px;
+    
+} 
+
+table {
+    width: 400px;
+    border-style: hidden;
+    border-radius: 10px ;
+    overflow: hidden;
+       }
+
+th{
+    font-size: 20px;
+    text-align: left;
+    background-color: black;
+    color: gray;
+    border-bottom: 3px solid gray;
+}
+
+td{
+    font-size: 20px;
+
+    color: gray;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
