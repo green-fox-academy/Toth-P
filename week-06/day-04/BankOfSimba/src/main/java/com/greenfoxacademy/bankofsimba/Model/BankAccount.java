@@ -60,9 +60,9 @@ public class BankAccount {
 
     public String getStyle() {
         if (isKing) {
-            return "red";
+            return "king";
         }
-        return "black";
+        return "notking";
     }
 
     public String getGood() {

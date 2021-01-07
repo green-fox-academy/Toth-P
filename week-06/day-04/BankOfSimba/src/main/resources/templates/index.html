@@ -20,12 +20,13 @@
 
 
     </tr>
-    <tr th:style="'color:'+ ${account.getStyle}" th:each="account: ${accounts}">
+    <tr th:class="${account.getStyle}" th:each="account: ${accounts}">
         <td th:text="${accountStat.index}"></td>
         <td th:text="${account.name}"></td>
         <td th:text="${account.getFormatedBalance}"></td>
         <td th:text="${account.animalType}"></td>
         <td th:text="${account.getGood}"></td>
+
 
 
 </table>
