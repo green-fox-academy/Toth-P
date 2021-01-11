@@ -16,11 +16,11 @@ public class ShopItemController {
     List<ShopItem> shopItems = new ArrayList<>();
 
     public ShopItemController() {
-        shopItems.add(new ShopItem("Running shoes", "Nike running shoes for every day sport", 1000.0, 5));
-        shopItems.add(new ShopItem("Printer", "Some HP printer that will print pages", 3000.0, 2));
-        shopItems.add(new ShopItem("Coca cola", "0.5l standard coke", 25.0, 0));
-        shopItems.add(new ShopItem("Wokin", "Chicken with fried rice with WOKIN sauce", 119.0, 100));
-        shopItems.add(new ShopItem("T-shirt", "Blue with a corgi on a bike", 300.0, 1));
+        shopItems.add(new ShopItem("Running shoes", "Nike running shoes for every day sport", 1000.0, 5, "Clothes and Shoes"));
+        shopItems.add(new ShopItem("Printer", "Some HP printer that will print pages", 3000.0, 2, "Electronics"));
+        shopItems.add(new ShopItem("Coca cola", "0.5l standard coke", 25.0, 0, "Beverages and Snacks"));
+        shopItems.add(new ShopItem("Wokin", "Chicken with fried rice with WOKIN sauce", 119.0, 100, "Beverages and Snacks"));
+        shopItems.add(new ShopItem("T-shirt", "Blue with a corgi on a bike", 300.0, 1, "Clothes and Shoes"));
 
     }
 
@@ -88,13 +88,50 @@ public class ShopItemController {
         return "/webshop";
     }
 
+    @GetMapping("/more-filters")
+    public String moreFilters(Model model) {
+        model.addAttribute("shopItems", shopItems);
+        return "more-filters";
+    }
+
+    @GetMapping("clothes-and-shoes")
+    public String clothesAndShoes(Model model) {
+        model.addAttribute("shopItems", getFilteredByType("Clothes and Shoes"));
+        return "more-filters";
+    }
+
+    @GetMapping("/electronics")
+    public String electronics(Model model) {
+        model.addAttribute("shopItems", getFilteredByType("Electronics"));
+        return "more-filters";
+    }
+
+    @GetMapping("/beverages-and-snacks")
+    public String beveragesAndSnacks(Model model) {
+        model.addAttribute("shopItems", getFilteredByType("Beverages and Snacks"));
+        return "more-filters";
+    }
+
+    @GetMapping("/euro")
+    public String euro(Model model) {
+        model.addAttribute("shopItems", getEuro());
+        return "more-filters";
+    }
+
+    @GetMapping("/huf")
+    public String huf(Model model) {
+        model.addAttribute("shopItems", getHuf());
+        return "more-filters";
+    }
+
 
     private List<ShopItem> getSearch(String input) {
         return shopItems
                 .stream()
-                .filter(f -> f.getName().toLowerCase().contains(input) || f.getDescription().toLowerCase().contains(input))
+                .filter(f -> f.getName().toLowerCase().contains(input.toLowerCase()) || f.getDescription().toLowerCase().contains(input.toLowerCase()))
                 .collect(Collectors.toList());
     }
+
 
     private List<ShopItem> getQuantityOfStock() {
         return shopItems
@@ -131,6 +168,36 @@ public class ShopItemController {
                 .max(Comparator.comparingDouble(ShopItem::getPrice));
 
 
+    }
+
+    private List<ShopItem> getFilteredByType(String type) {
+        return shopItems
+                .stream()
+                .filter(f -> f.getType().equals(type))
+                .collect(Collectors.toList());
+    }
+
+    private List<ShopItem> getEuro() {
+        if (shopItems.get(0).getCurrency() == "Ft") {
+            return shopItems.stream()
+                    .peek(v -> v.setCurrency("€"))
+                    .peek(v -> v.setPrice(v.getPrice() / 350))
+                    .collect(Collectors.toList());
+        }
+
+        return shopItems;
+
+    }
+
+    private List<ShopItem> getHuf() {
+        if (shopItems.get(0).getCurrency() == "€") {
+            return shopItems.stream()
+                    .peek(v -> v.setCurrency("Ft"))
+                    .peek(v -> v.setPrice(v.getPrice() * 350))
+                    .collect(Collectors.toList());
+        }
+
+        return shopItems;
     }
 
 

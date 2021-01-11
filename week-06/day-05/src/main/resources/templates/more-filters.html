@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Filters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="home-row">
+    <a class="home" th:href="@{/}">
+        <h1>My Shop</h1>
+    </a>
+
+    <a class="more" th:href="@{/more-filters}">
+        <h2>MORE>></h2>
+    </a>
+</div>
+
+<header th:fragment="only-header">
+
+
+    <ul class="navigation">
+        <li class="nav-item">
+            <a th:href="@{/clothes-and-shoes}">CLOTHES AND SHOES </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/electronics}">ELECTRONICS</a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/beverages-and-snacks}">BEVERAGES AND SNACKS</a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/euro}">EURO</a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/huf}">ORIGINAL CURRENCY</a>
+        </li>
+    </ul>
+
+    <ul class="navigation">
+        <li class="nav-item">
+            <a th:href="@{/clothes-and-shoes}">Above </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/electronics}">Below</a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/asd}">Exactly</a>
+        </li>
+
+    </ul>
+    <form class="search-form" action="/search" method="post">
+        <label for="search">Filter by price:</label>
+        <input id="search" name="search" placeholder="...e.g.:300">
+        <button id="submit" type="submit">Search</button>
+    </form>
+</header>
+
+<div class="table-wrapper">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity<br>of stock</th>
+        </tr>
+        <tr th:each="item : ${shopItems}">
+            <td th:text="${item.name}">
+            <td th:text="${item.type}">
+            <td th:text="${item.description}">
+            <td th:text="${item.getFormatedPrice()}">
+            <td th:text="${item.quantityOfStock}">
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
