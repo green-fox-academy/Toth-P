@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Webshop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="home-row">
+    <a class="home" th:href="@{/useful}">
+        <h1>Useful Utilities</h1>
+    </a>
+
+</div>
+
+<header>
+
+
+    <ul class="navigation">
+        <li class="nav-item">
+            <a th:href="@{/useful/colored}">Colored Background </a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/useful/email?email=is@this.valid}">Email validator</a>
+        </li>
+
+
+    </ul>
+
+    <form class="search-form" action="/useful/caesar-encoding" method="get">
+        <label for="encodedText">Encode text:</label>
+        <input type="text" id="encodedText" name="encodedText">
+        <label for="encodedNumber">Number:</label>
+        <input type="number" id="encodedNumber" name="encodedNumber" min="0">
+        <button id="submit1" type="submit">Search</button>
+    </form>
+
+    <form class="search-form" action="/useful/caesar-decoding" method="get">
+        <label for="decodedText">Decode text:</label>
+        <input type="text" id="decodedText" name="decodedText">
+        <label for="decodedNumber">Number:</label>
+        <input type="number" id="decodedNumber" name="decodedNumber" min="0">
+        <button id="submit2" type="submit">Search</button>
+    </form>
+</header>
+
+
+</body>
+</html>

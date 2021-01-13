@@ -1,0 +1,131 @@
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: tomato;
+
+
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    background: tomato;
+    padding-left: 10px;
+}
+
+.navigation .nav-item {
+    padding: 5px;
+}
+
+.navigation .nav-item a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.home-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.home {
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+
+}
+
+.more {
+    text-align: right;
+    text-decoration: none;
+    color: tomato;
+
+}
+
+h1 {
+    background-color: tomato;
+    margin-left: 20px;
+    border: tomato solid 3px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px 50px;
+
+}
+
+.search-form {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+
+}
+
+.search-form input {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    background-color: inherit;
+
+}
+
+.search-form input::placeholder {
+    color: white;
+}
+
+table th, table td {
+    border: white solid 10px;
+}
+
+table th {
+    text-align: center;
+    padding: 20px;
+    height: 50px;
+    background: rgba(255, 99, 71, .9);
+    border: tomato solid 5px;
+
+}
+
+table td {
+    height: 80px;
+}
+
+#submit {
+    width: 100px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.836);
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.table-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
