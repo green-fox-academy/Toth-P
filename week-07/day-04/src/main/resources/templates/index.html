@@ -7,30 +7,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<ul class="asd">
-    <li class="asd2">
-        <a th:href="@{/login}">Information </a>
-    </li>
-</ul>
+<!--<ul class="asd">-->
+<!--    <li class="asd2">-->
+<!--        <a th:href="@{/login}">Information </a>-->
+<!--    </li>-->
+<!--</ul>-->
+<a th:href="@{/}">
+    <button>Information</button>
+</a>
+<a th:href="@{/login}">
+    <button>Login</button>
+</a>
+<a th:href="@{/nutrition-store}">
+    <button>Nutrition Store</button>
+</a>
+<a th:href="@{/trick-center}">
+    <button>Trick Center</button>
+</a>
+<a th:href="@{/action-history}">
+    <button>Action History</button>
+</a>
+
 
 <img src="images/greenfox.png">
 
-<p th:text="'This is ' + ${name} + ' . Currently living on pizza and lemonade. He knows 2 tricks.'"</p>
+<p th:text="'This is ' + ${name} + ' . Currently living on '+ ${food} +' and '+ ${drink} +'. He knows '+ ${tricks} +' tricks.'"</p>
+
 
 <h1>Known tricks</h1>
-<ul class="asd3">
-    <li class="asd4">
-        <a>write HTML</a>
-    </li>
-    <li class="asd4">
-        <a>code in Java</a>
 
-    </li>
-</ul>
+<p th:if="${actualTricks.size == 0}"> You know no tricks, yet. Go learn some.</p>
 
+<div class="table-wrapper">
+    <table>
+
+        <tr th:each="trick : ${actualTricks}">
+            <td th:text="${trick}"</td>
 
 
+        </tr>
+    </table>
+</div>
 
+
+<!--<select name="tricks" id="tricks">-->
+<!--    <option th:text="${tricks}" th:value="${tricks}" th:each="tricks: ${trickList}">-->
+<!--</select>-->
 
 
 </body>

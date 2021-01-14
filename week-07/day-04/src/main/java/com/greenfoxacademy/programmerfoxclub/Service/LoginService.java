@@ -15,11 +15,11 @@ public class LoginService {
     @Autowired
     LoginService() {
         foxList = new ArrayList<>();
-
+        foxList.add(new Fox("Mr. Green"));
     }
 
 
-    public String newFox(String name) {
+    public String newFoxName(String name) {
         foxList.add(new Fox());
         foxList.get(foxList.size() - 1).setName(name);
         return foxList.get(foxList.size() - 1).getName();

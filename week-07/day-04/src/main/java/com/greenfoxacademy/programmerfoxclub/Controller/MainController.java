@@ -1,7 +1,9 @@
 package com.greenfoxacademy.programmerfoxclub.Controller;
 
-import com.greenfoxacademy.programmerfoxclub.Model.Fox;
+import com.greenfoxacademy.programmerfoxclub.Service.InformationService;
 import com.greenfoxacademy.programmerfoxclub.Service.LoginService;
+import com.greenfoxacademy.programmerfoxclub.Service.NutritionService;
+import com.greenfoxacademy.programmerfoxclub.Service.TrickService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,21 +11,31 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.awt.*;
-
 @Controller
 public class MainController {
 
-    LoginService loginService;
+    public LoginService loginService;
+    public InformationService informationService;
+    public NutritionService nutritionService;
+    public TrickService trickService;
 
     @Autowired
-    MainController(LoginService loginService) {
+    MainController(LoginService loginService, InformationService informationService, NutritionService nutritionService, TrickService trickService) {
         this.loginService = loginService;
+        this.informationService = informationService;
+        this.nutritionService = nutritionService;
+        this.trickService = trickService;
     }
 
     @GetMapping("/")
-    public String mainPage(@RequestParam String name, Model model) {
+    public String mainPage(@RequestParam(defaultValue = "Mr. Green") String name, Model model) {
         model.addAttribute("name", name);
+        model.addAttribute("trickList", trickService.getTrickList());
+        model.addAttribute("food", informationService.foxFood());
+        model.addAttribute("drink", informationService.foxDrink());
+        model.addAttribute("tricks", informationService.foxTricks());
+        model.addAttribute("actualTricks", informationService.actualFoxTricks());
+
 
         return "index";
     }
@@ -36,9 +48,38 @@ public class MainController {
 
     @PostMapping("/login")
     public String postName(@RequestParam String name, Model model) {
-        model.addAttribute("text", loginService.newFox(name));
+        model.addAttribute("text", loginService.newFoxName(name));
         return "redirect:/?name=" + name;
     }
+
+    @GetMapping("/nutrition-store")
+    public String nutritionStore(Model model) {
+        model.addAttribute("foodList", nutritionService.getFoodList());
+        model.addAttribute("drinkList", nutritionService.getDrinkList());
+
+        return "nutrition";
+    }
+
+    @PostMapping("/nutrition-store")
+    public String postNutrition(@RequestParam String food, String drink, Model model){
+        model.addAttribute("food",nutritionService.foxFood(food));
+        model.addAttribute("drink",nutritionService.foxDrink(drink));
+        return "redirect:/?name=" + informationService.foxName();
+    }
+
+    @GetMapping("/trick-center")
+    public String trickCenter(Model model) {
+        model.addAttribute("trickList", trickService.getTrickList());
+        return "trickCenter";
+    }
+
+    @PostMapping("/trick-center")
+    public String postTrick(@RequestParam String trick, Model model){
+        model.addAttribute("trick",trickService.foxTricks(trick));
+
+        return "redirect:/?name=" + informationService.foxName();
+    }
+
 
 
 }
