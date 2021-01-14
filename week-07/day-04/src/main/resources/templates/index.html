@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmer Fox Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<ul class="asd">
+    <li class="asd2">
+        <a th:href="@{/login}">Information </a>
+    </li>
+</ul>
+
+<img src="images/greenfox.png">
+
+<p th:text="'This is ' + ${name} + ' . Currently living on pizza and lemonade. He knows 2 tricks.'"</p>
+
+<h1>Known tricks</h1>
+<ul class="asd3">
+    <li class="asd4">
+        <a>write HTML</a>
+    </li>
+    <li class="asd4">
+        <a>code in Java</a>
+
+    </li>
+</ul>
+
+
+
+
+
+
+</body>
+</html>
