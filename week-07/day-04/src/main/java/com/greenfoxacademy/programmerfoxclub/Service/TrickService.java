@@ -1,5 +1,6 @@
 package com.greenfoxacademy.programmerfoxclub.Service;
 
+import com.greenfoxacademy.programmerfoxclub.Model.Fox;
 import com.greenfoxacademy.programmerfoxclub.Model.Tricks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
 @Service
 public class TrickService {
 
@@ -25,14 +27,15 @@ public class TrickService {
     }
 
 
+    public Fox foxTricks(String trick, Fox fox) {
+        if (fox.getTrickList().contains(trick)){
+            return fox;
+        }else
+        fox.getTrickList().add(trick);
 
-    public List<String> foxTricks(String trick) {
-        loginService.getFoxList().get(loginService.getFoxList().size() - 1).getTrickList().add(trick);
-        return loginService.getFoxList().get(loginService.getFoxList().size() - 1).getTrickList();
+        return fox;
 
     }
-
-
 
 
 }

@@ -12,7 +12,7 @@
 <!--        <a th:href="@{/login}">Information </a>-->
 <!--    </li>-->
 <!--</ul>-->
-<a th:href="@{/}">
+<a th:href="@{/home}">
     <button>Information</button>
 </a>
 <a th:href="@{/login}">
@@ -31,7 +31,7 @@
 
 <img src="images/greenfox.png">
 
-<p th:text="'This is ' + ${name} + ' . Currently living on '+ ${food} +' and '+ ${drink} +'. He knows '+ ${tricks} +' tricks.'"</p>
+<p th:text="'This is ' + ${name} + '. Currently living on '+ ${food} +' and '+ ${drink} +'. He knows '+ ${tricks} +' tricks.'"</p>
 
 
 <h1>Known tricks</h1>

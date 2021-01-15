@@ -5,16 +5,25 @@ public enum Foods {
     ONE {
         @Override
         public String toString() {
-            return "Pizza";
+            return "Salad";
         }
     },
 
     TWO {
         @Override
         public String toString() {
+            return "Pizza";
+        }
+    },
+
+    THREE {
+        @Override
+        public String toString() {
             return "Burger";
         }
     }
+
+
 
 
 

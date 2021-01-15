@@ -14,8 +14,16 @@ public enum Tricks {
         public String toString() {
             return "code in Java";
         }
-    }
+    },
 
+
+
+    THREE {
+        @Override
+        public String toString() {
+            return "play Exploding Kittens";
+        }
+    }
 
 
 

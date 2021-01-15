@@ -5,18 +5,23 @@ public enum Drinks {
     ONE {
         @Override
         public String toString() {
-            return "Cola";
+            return "Water";
         }
     },
 
     TWO {
         @Override
         public String toString() {
+            return "Cola";
+        }
+    },
+
+    THREE {
+        @Override
+        public String toString() {
             return "RedBull";
         }
     }
-
-
 
 
 }

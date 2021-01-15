@@ -34,16 +34,16 @@ public class NutritionService {
     }
 
 
-    public String foxFood(String food) {
-        loginService.getFoxList().get(loginService.getFoxList().size() - 1).setFood(food);
-        return loginService.getFoxList().get(loginService.getFoxList().size() - 1).getFood();
+    public Fox foxFood(String food , Fox fox) {
+          fox.setFood(food);
+        return fox;
 
     }
 
 
-    public String foxDrink(String drink) {
-        loginService.getFoxList().get(loginService.getFoxList().size() - 1).setDrink(drink);
-        return loginService.getFoxList().get(loginService.getFoxList().size() - 1).getDrink();
+    public Fox foxDrink(String drink , Fox fox) {
+        fox.setDrink(drink);
+        return fox;
 
     }
 

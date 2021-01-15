@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Getter
 @Setter
@@ -20,11 +21,10 @@ public class Fox {
     private String drink = "water";
 
 
-    public Fox(String name){
+    public Fox(String name) {
         this.name = name;
 
     }
-
 
 
 }
