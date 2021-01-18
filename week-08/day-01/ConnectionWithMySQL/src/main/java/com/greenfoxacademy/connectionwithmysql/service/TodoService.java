@@ -15,21 +15,28 @@ public class TodoService {
 
     TodoRepository todoRepository;
 
+
     @Autowired
-    TodoService(TodoRepository todoRepo){
-        this.todoRepository=todoRepo;
+    TodoService(TodoRepository todoRepo) {
+        this.todoRepository = todoRepo;
     }
 
-    public List<Todo> getAllTodo(){
+    public List<Todo> getAllTodo() {
         return (List<Todo>) todoRepository.findAll();
     }
 
-    public void SaveTodo(String text){
+    public void SaveTodo(String text) {
         todoRepository.save(new Todo(text));
     }
 
-    public List<Todo> getAllnotDone (Boolean isActive){
-        return getAllTodo().stream().filter(t -> !t.isDone()==isActive).collect(Collectors.toList());
+    public List<Todo> getAllUndone(Boolean isActive) {
+
+        return todoRepository.findAllByDone(!isActive);
+    }
+
+
+    public void deleteTodo(Long id) {
+        todoRepository.deleteById(id);
     }
 
 
