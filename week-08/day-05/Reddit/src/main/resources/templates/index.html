@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome Todo app</title>
+</head>
+<body>
+
+<a href="/submit">Submit new post</a>
+<br>
+
+<ul>
+    <li>
+        <a th:href="@{/?sort=popular}">Popular posts</a>
+    </li>
+
+    <li>
+        <a th:href="@{/?sort=newest}">Newest posts</a>
+    </li>
+
+    <li>
+        <a th:href="@{/?sort=oldest}">Oldest posts</a>
+    </li>
+
+</ul>
+<h1>trending posts</h1>
+
+<table>
+
+    <tr th:each="post: ${postList}">
+        <!--        <td th:text="${post.id}"></td>-->
+        <td th:text="${post.counter}"></td>
+        <td><a th:href="'/upvote/' + ${post.id}">+</a></td>
+        <td><a th:href="'/downvote/' + ${post.id}">-</a></td>
+        <td><a th:href="'/actual-post/' + ${post.id}" th:text="${post.title}"></a></td>
+        <td><a th:href="${post.url}"> Direct link</a></td>
+        <td><a th:text="${post.timestamp}"></a></td>
+
+
+
+    </tr>
+</table>
+
+<form th:each="number:${numberOfPagesList}" action="/" method="get">
+    <input type="hidden" name="number" th:value="${number}"/>
+    <input type="hidden" name="sort" th:value="${sort}"/>
+    <input type="submit"  th:value="${number}" >
+
+</form>
+
+
+</body>
+</html>
